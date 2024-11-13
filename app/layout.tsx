@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { App, ConfigProvider } from "antd";
 import SolanaProvider from "./solana-provider";
+import { appTheme } from "@/theme";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -30,7 +31,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ConfigProvider componentSize="large">
+        <ConfigProvider theme={appTheme} componentSize="large">
           <App>
             <SolanaProvider>{children}</SolanaProvider>
           </App>
@@ -39,4 +40,3 @@ export default function RootLayout({
     </html>
   );
 }
-
