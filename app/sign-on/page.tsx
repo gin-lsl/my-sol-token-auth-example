@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 
-const SignInButton = dynamic(() => import("../sign-in/sign-button"), {
+const SignInButton = dynamic(() => import("./sign-button"), {
   ssr: false,
 });
 
