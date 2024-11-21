@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
+import { Analytics } from '@vercel/analytics/next';
 import { App, ConfigProvider } from "antd";
 import SolanaProvider from "./solana-provider";
 import { appTheme } from "@/theme";
+
+import "./globals.css";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -36,6 +38,7 @@ export default function RootLayout({
             <SolanaProvider>{children}</SolanaProvider>
           </App>
         </ConfigProvider>
+        <Analytics />
       </body>
     </html>
   );
